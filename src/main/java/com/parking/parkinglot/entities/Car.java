@@ -2,42 +2,33 @@ package com.parking.parkinglot.entities;
 
 import jakarta.persistence.*;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Entity
 @Table(name = "cars")
 public class Car {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToMany(mappedBy = "owner", orphanRemoval = true)
-    private Set<Car> cars = new LinkedHashSet<>();
-
+    @Column(name = "parking_spot")
     private String parkingSpot;
 
+    @Column(name = "license_plate")
     private String licensePlate;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id", nullable = false)
+    @JoinColumn(name = "owner_id", nullable = false) // ✅ Legătura corectă către User
     private User owner;
 
-    public Set<Car> getCars() {
-        return cars;
+    // --- GETTERS & SETTERS ---
+
+    public Long getId() {
+        return id;
     }
 
-    public void setCars(Set<Car> cars) {
-        this.cars = cars;
-    }
-
-    public Car getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Car owner) {
-        this.owner = owner;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getParkingSpot() {
@@ -56,12 +47,11 @@ public class Car {
         this.licensePlate = licensePlate;
     }
 
-    public Long getId() {
-        return id;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
-
 }
