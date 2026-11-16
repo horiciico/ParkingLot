@@ -18,7 +18,7 @@ public class Car {
     private String licensePlate;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id", nullable = false) // ✅ Legătura corectă către User
+    @JoinColumn(name = "owner_id", nullable = false)
     private User owner;
 
     // --- GETTERS & SETTERS ---

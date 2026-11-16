@@ -19,6 +19,14 @@
                                         <a class="nav-link" href="${pageContext.request.contextPath}/Cars">Cars</a>
                                     </li>
 
+                                    <!-- link catre about -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/Users">Users</a>
+                                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,15 +36,3 @@
         </div>
     </nav>
 </header>
-
-<!-- Adăugat padding-top (mt-5 / pt-5) ca să nu intre sub navbar-ul fix -->
-<main class="container mt-5 pt-4">
-    <h1>Welcome to the parking lot</h1>
-</main>
-
-<footer class="container my-4">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2017–2026 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
-</body>
-</html>
