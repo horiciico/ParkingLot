@@ -1,11 +1,11 @@
 package com.parking.parkinglot.common;
 
-public class CarDTO
-{
+public class CarDTO {
     Long id;
     String parkingSpot;
     String ownerName;
     String licensePlate;
+    Long ownerId;
 
     public CarDTO(String parkingSpot, String ownerName, Long id, String licensePlate) {
         this.parkingSpot = parkingSpot;
@@ -14,7 +14,13 @@ public class CarDTO
         this.licensePlate = licensePlate;
     }
 
-
+    public CarDTO(String parkingSpot, String ownerName, Long id, String licensePlate, Long ownerId) {
+        this.parkingSpot = parkingSpot;
+        this.ownerName = ownerName;
+        this.id = id;
+        this.licensePlate = licensePlate;
+        this.ownerId = ownerId;
+    }
 
     public String getLicensePlate() {
         return licensePlate;
@@ -32,4 +38,7 @@ public class CarDTO
         return ownerName;
     }
 
+    public Long getOwnerId() {
+        return ownerId;
+    }
 }

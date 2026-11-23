@@ -24,5 +24,6 @@
     <p>&copy; 2017–2026 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 
+  <script src="${pageContext.request.contextPath}/scripts/form-validation.js"></script>
 </body>
 </html>

@@ -2,6 +2,9 @@ package com.parking.parkinglot.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -10,12 +13,23 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @OneToMany(mappedBy = "owner")
+    private List<Car> cars = new ArrayList<>();
+
     private String password;
 
     private String email;
 
     @Column(name = "username")
     private String username;
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 
     public String getPassword() {
         return password;
